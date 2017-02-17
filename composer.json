@@ -1,0 +1,22 @@
+{
+    "name": "cmzz/aliyun-sms",
+    "description": "aliyun sms php sdk for composer",
+    "keywords": ["aliyun", "aliyun-sms", "sdk"],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Czmm\\AliyunSms\\": "src/"
+        }
+    },
+
+    "license": "MIT",
+    "minimum-stability" : "dev",
+    "authors": [
+        {
+            "name": "Andy",
+            "email": "iwuzhuo@gmail.com"
+        }
+    ]
+}
