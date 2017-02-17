@@ -1,6 +1,6 @@
 {
     "name": "cmzz/aliyun-sms",
-    "description": "aliyun sms php sdk for composer",
+    "description": "阿里云短信服务 PHP SDK 的 composer 封装",
     "keywords": ["aliyun", "aliyun-sms", "sdk"],
     "require": {
         "cmzz/aliyun-core": "*"
