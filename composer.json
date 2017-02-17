@@ -3,7 +3,7 @@
     "description": "aliyun sms php sdk for composer",
     "keywords": ["aliyun", "aliyun-sms", "sdk"],
     "require": {
-
+        "cmzz/aliyun-core": "*"
     },
     "autoload": {
         "psr-4": {
