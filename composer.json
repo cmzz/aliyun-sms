@@ -3,11 +3,12 @@
     "description": "阿里云短信服务 PHP SDK 的 composer 封装",
     "keywords": ["aliyun", "aliyun-sms", "sdk"],
     "require": {
+        "php": ">5.3",
         "cmzz/aliyun-core": "*"
     },
     "autoload": {
         "psr-4": {
-            "Czmm\\AliyunSms\\": "src/"
+            "Cmzz\\AliyunSms\\": "src/"
         }
     },
 
