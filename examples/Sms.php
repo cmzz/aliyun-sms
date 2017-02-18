@@ -8,6 +8,9 @@
 
 use Cmzz\AliyunCore\Profile\DefaultProfile;
 use Cmzz\AliyunCore\DefaultAcsClient;
+use Cmzz\AliyunCore\Regions\Endpoint;
+use Cmzz\AliyunCore\Regions\EndpointConfig;
+use Cmzz\AliyunCore\Regions\EndpointProvider;
 use Cmzz\AliyunSms\Sms\Request\V20160927\SingleSendSmsRequest;
 use Cmzz\AliyunCore\Exception\ClientException;
 use Cmzz\AliyunCore\Exception\ServerException;
@@ -16,9 +19,13 @@ class SmsController
 {
     public function send()
     {
-        define('ENABLE_HTTP_PROXY', FALSE);
-        define('HTTP_PROXY_IP', '127.0.0.1');
-        define('HTTP_PROXY_PORT', '8888');
+        define('ENABLE_HTTP_PROXY', env('ALIYUN_SMS_ENABLE_HTTP_PROXY', false));
+        define('HTTP_PROXY_IP',     env('ALIYUN_SMS_HTTP_PROXY_IP', '127.0.0.1'));
+        define('HTTP_PROXY_PORT',   env('ALIYUN_SMS_HTTP_PROXY_PORT', '8888'));
+
+        $endpoint = new Endpoint("cn-hangzhou", EndpointConfig::getregionIds(), EndpointConfig::getProducDomains());
+        $endpoints = array($endpoint);
+        EndpointProvider::setEndpoints($endpoints);
 
         $iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "your accessKey", "your accessSecret");
         $client = new DefaultAcsClient($iClientProfile);
